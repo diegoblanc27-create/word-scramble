@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Word Scramble</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="card">
+  <h1>🔤 Word Scramble</h1>
+
+  <!-- Start screen -->
+  <section id="start">
+    <p class="sub">Unscramble 10 words before time runs out. Faster answers earn bonus points!</p>
+    <p>🏆 Best score: <strong id="best">0</strong></p>
+    <label for="difficulty">Difficulty</label>
+    <select id="difficulty" aria-label="Difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium" selected>Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    <button id="startBtn">Start Game</button>
+  </section>
+
+  <!-- Game screen -->
+  <section id="game" class="hidden">
+    <div class="stats">
+      <span>Word <span id="round">1</span>/10</span>
+      <span>⭐ <span id="score">0</span></span>
+      <span>🔥 Streak <span id="streak">0</span></span>
+    </div>
+    <div class="bar" aria-label="Progress"><div id="progress"></div></div>
+    <div class="bar" id="timerBar" aria-label="Time left"><div></div></div>
+    <div class="tiles" id="tiles" aria-live="polite"></div>
+    <div class="hint" id="hint"></div>
+    <input id="guess" type="text" autocomplete="off" autocapitalize="off" placeholder="Type your answer" aria-label="Your answer">
+    <div class="row">
+      <button class="alt" id="hintBtn">💡 Hint (−5)</button>
+      <button id="submitBtn">Submit</button>
+    </div>
+    <div id="feedback" aria-live="polite"></div>
+  </section>
+
+  <!-- Results screen -->
+  <section id="end" class="hidden">
+    <p class="sub">Game over!</p>
+    <div class="big" id="finalScore">0</div>
+    <p id="summary"></p>
+    <p id="newBest" class="good"></p>
+    <button id="againBtn">Play Again</button>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
